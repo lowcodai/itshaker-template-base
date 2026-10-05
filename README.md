@@ -7,7 +7,7 @@
 ## Description
 
 This repository is a GitHub template for any new lowcodai project. It includes:
-- Standard documentation structure (`docs/adr/`, `docs/architecture/`, `docs/operations/`, `docs/runbooks/`)
+- Standard documentation structure (`docs/prd/`, `docs/adr/`, `docs/plans/`, `docs/architecture/`, `docs/operations/`, `docs/runbooks/`)
 - GitHub Copilot configuration (instructions, agents, hooks)
 - Issue and pull request templates
 
@@ -59,6 +59,7 @@ Click **Use this template** in the GitHub interface.
 │   ├── adr/           # Architecture Decision Records (see docs/adr/README.md for the process)
 │   ├── architecture/  # Architecture diagrams and documentation
 │   ├── operations/    # Operational continuity state for Hermes sessions (CURRENT/HANDOFF/ACTIVITY)
+│   ├── plans/         # Delivery plans: epics, ordered tasks and runbooks (ADR-0006)
 │   └── runbooks/      # Operational runbooks
 └── .github/
     ├── copilot-instructions.md  # GitHub Copilot instructions

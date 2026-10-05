@@ -18,7 +18,7 @@ template.
 
 ## Agent rulebook
 
-[`AGENTS.md`](AGENTS.md) is the first file every agent (Hermes, Claude Code, Copilot) and every
+[`AGENTS.md`](AGENTS.md) is the first file every agent (orchestrator, Claude Code, Copilot) and every
 contributor reads: commands, repository map, the DEV → REVIEW → TEST workflow (ADR-0005),
 boundaries and definition of done. Fill in its `TODO` markers when you create a project from
 this template. It is rendered by `vibecoding-bootstrap/scripts/apply-template.sh`, the single
@@ -34,8 +34,12 @@ The sequential coding team kit it refers to ships with this template (ADR-0005),
 | `.ai/orchestration.yaml` | Gateways, limits, validation commands — **set your lint/test commands** |
 | `.ai/roles/`, `.ai/tasks/TASK-template.md` | DEV / REVIEW / TEST prompts and the task contract |
 | `scripts/orchestrate.py` | The DEV → REVIEW → TEST state machine |
+| `docs/{prd,adr,plans,runbooks,operations}/` | Agent-neutral documentation skeleton (READMEs and continuity files) |
 
 Keep `.claude/` committed: the orchestrator refuses to run DEV without its hooks.
+
+This template is agent-neutral (ADR-0007): orchestrator-specific rules (today Hermes) are installed
+from `vibecoding-copilot-governance/adapters/` in the agent's own environment, not stored here.
 
 ## Usage
 
@@ -58,7 +62,7 @@ Click **Use this template** in the GitHub interface.
 ├── docs/
 │   ├── adr/           # Architecture Decision Records (see docs/adr/README.md for the process)
 │   ├── architecture/  # Architecture diagrams and documentation
-│   ├── operations/    # Operational continuity state for Hermes sessions (CURRENT/HANDOFF/ACTIVITY)
+│   ├── operations/    # Continuity state for long-running agents (CURRENT/HANDOFF/ACTIVITY)
 │   ├── plans/         # Delivery plans: epics, ordered tasks and runbooks (ADR-0006)
 │   └── runbooks/      # Operational runbooks
 └── .github/
